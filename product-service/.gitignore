@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### logs ###
+/logs
+*.log
+
+### MongoDB volume ###
+/mongo-data/
+/data/
