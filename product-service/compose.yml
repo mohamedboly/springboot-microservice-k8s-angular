@@ -1,0 +1,12 @@
+services:
+  mongodb:        # nom du service
+    image: mongo:7.0.5    # image officielle MongoDB, version 7.0.5
+    container_name: mongodb   # nom du conteneur (facultatif)
+    ports:
+      - "27017:27017"     # mappe le port 27017 du conteneur vers le port 27017 de l’hôte
+    environment:          # variables d’environnement passées au conteneur
+      MONGO_INITDB_ROOT_USERNAME: root         # utilisateur admin
+      MONGO_INITDB_ROOT_PASSWORD: password     # mot de passe admin
+      MONGO_INITDB_DATABASE: product-service   # base de données créée au démarrage
+    volumes:              # persistance des données
+      - ./data:/data/db   # lie le dossier local ./data au répertoire /data/db du conteneur
